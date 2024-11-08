@@ -5,6 +5,7 @@
 ![CMake](https://img.shields.io/badge/build-CMake-informational)
 ![Optimization](https://img.shields.io/badge/optimization-O3-orange)
 ![License](https://img.shields.io/badge/license-MIT-blue)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/pcurz/parallel-nbody-simulation-mpi)
 
 **Parallel N-Body Simulation** is a project that simulates the gravitational interactions between celestial bodies in a 3D space using parallel computing with MPI. This approach allows for efficient computation of complex gravitational calculations by distributing the workload across multiple processors.
 
@@ -53,25 +54,46 @@ parallel-nbody-simulation-mpi/
 
 ---
 
-## 🛠️ Building the Project
+## 📥 Getting Started
 
-1. **Create a build directory** and navigate into it:
+You can **download a precompiled version** from the latest release or **build the project from source**.
+
+### Option 1: Download from Releases
+
+Visit the **[Releases section](https://github.com/pcurz/parallel-nbody-simulation-mpi/releases/latest)** of this repository, download the latest release, and extract the contents. The release package includes:
+- The `parallel_nbody` executable
+- The `data` directory with input files
+- The `results` directory for output
+
+After extracting, you can run the program directly using `mpirun` (see the [Running the Simulation](#-running-the-simulation) section below for usage).
+
+### Option 2: Build from Source
+
+If you prefer to build the project from source, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/pcurz/parallel-nbody-simulation-mpi.git
+   cd parallel-nbody-simulation-mpi
+   ```
+
+2. **Create a Build Directory**:
    ```bash
    mkdir build
    cd build
    ```
 
-2. **Run CMake** to generate makefiles:
+3. **Run CMake**:
    ```bash
    cmake ..
    ```
 
-3. **Compile the project**:
+4. **Compile the Project**:
    ```bash
    make
    ```
 
-This will generate an executable named `parallel_nbody`.
+This will generate an executable named `parallel_nbody` in the `build` directory.
 
 ---
 
