@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*' # Trigger on version tags like v1.0, v2.0, etc.
   pull_request:
     branches:
       - main
-  # Trigger the workflow when a new tag is pushed
-  push:
-    tags:
-      - 'v*' # e.g., v1.0, v2.0
 
 jobs:
   build:
@@ -76,6 +74,8 @@ jobs:
           cp -r data release_package/
           cp -r results release_package/
           cp build/parallel_nbody release_package/
+          cd release_package
+          zip -r release_package.zip ./*
 
       # Create GitHub Release
       - name: Create GitHub Release
@@ -94,6 +94,6 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: release_package
+          asset_path: release_package/release_package.zip
           asset_name: release_package.zip
           asset_content_type: application/zip
