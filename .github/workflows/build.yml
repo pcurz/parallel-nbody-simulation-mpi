@@ -36,7 +36,7 @@ jobs:
       # Run a basic test to verify the executable works
       - name: Run basic test
         run: |
-          mpirun -np 2 ./build/parallel_nbody 12 /dev/null /dev/null
+          mpirun -np 2 ./build/parallel_nbody 12 data/initialized_4096 /dev/null
 
       # Upload Build Artifacts (optional)
       - name: Upload Build Artifacts
