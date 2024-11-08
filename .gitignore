@@ -1,0 +1,33 @@
+# Build directories
+/build/
+/CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Executable
+parallel_nbody
+
+# Object files
+*.o
+*.obj
+*.lo
+*.la
+
+# Generated libraries
+*.lib
+*.a
+*.so
+*.dylib
+*.dll
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+
+# IDE-specific files
+.vscode/
+*.idea/
+*.DS_Store
